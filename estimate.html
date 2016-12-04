@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+	<title>King Of Pasta</title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <script src="js/jquery.js"></script> 
+	<script src="js/jquery.glide.js"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/animate.css">
+    <script type="text/javascript" src="js/MyJQ.js"></script>
+    <script src="js/jquery.localScroll.min.js" type="text/javascript"></script>
+	<script src="js/jquery.scrollTo.min.js" type="text/javascript"></script> 
+    <script src="js/wow.min.js" type="text/javascript"></script> 
+
+<!-- scroll function -->
+<script type="text/javascript">
+$(document).ready(function() {
+   $('#navigations').localScroll({duration:800});
+});
+</script>
+
+
+<script src="js/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>
+
+<script language="javascript">
+function attachCheckboxHandlers() {
+    // get reference to element containing toppings checkboxes
+    var el = document.getElementById('toppings');
+
+    // get reference to input elements in toppings container element
+    var tops = el.getElementsByTagName('input');
+    
+    // assign updateTotal function to onclick property of each checkbox
+    for (var i=0, len=tops.length; i<len; i++) {
+        if ( tops[i].type === 'checkbox' ) {
+            tops[i].onclick = updateTotal;
+        }
+    }
+}
+    
+// called onclick of toppings checkboxes
+function updateTotal(e) {
+    // 'this' is reference to checkbox clicked on
+    var form = this.form;
+    
+    // get current value in total text box, using parseFloat since it is a string
+    var val = parseFloat( form.elements['total'].value );
+    
+    // if check box is checked, add its value to val, otherwise subtract it
+    if ( this.checked ) {
+        val += parseFloat(this.value);
+    } else {
+        val -= parseFloat(this.value);
+    }
+    
+    // format val with correct number of decimal places
+    // and use it to update value of total text box
+    form.elements['total'].value = formatDecimal(val);
+}
+    
+// format val to n number of decimal places
+// modified version of Danny Goodman's (JS Bible)
+function formatDecimal(val, n) {
+    n = n || 2;
+    var str = "" + Math.round ( parseFloat(val) * Math.pow(10, n) );
+    while (str.length <= n) {
+        str = "0" + str;
+    }
+    var pt = str.length - n;
+    return str.slice(0,pt) + "." + str.slice(pt);
+}
+
+</script>
+</head>
+
+<body onLoad="attachCheckboxHandlers()">
+<!--============ Navigation ============-->
+
+<div class="headerwrapper">
+	<div id="header" class="container">
+		<div class="logo"> <a href="#"><img src="images/LOGO.png" alt="logo" width="165" height="74"></a> </div> <!--end of Logo-->
+        <nav>
+            <ul id="navigations">
+                <li><a href="index.html">HOME</a></li>
+                <li> <a href="index.html#slider">ABOUT</a></li>
+                <li><a href="branches.html">BRANCHES</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="index.html#contactus">CONTACT</a></li>
+				 <li><a href="admin.html">ADMIN</a></li>
+            </ul>
+        </nav>
+      </div> <!--end of header-->
+</div> <!-- end of headerwrapper-->
+
+<form action="#" method="post" class="demoForm" id="demoForm">
+   <div id="estimator"> <fieldset>
+        <h2>ESTIMATOR</h2>
+        
+    <p>Size: Medium 0.00</p>
+    
+    <div id="toppings">Toppings: 
+        <label><input type="checkbox" name="waffles" value="40" onClick="return attachCheckboxHandlers()"/> Waffles</label>
+        <label><input type="checkbox" name="mushrooms" value="40" onClick="return attachCheckboxHandlers()"/> Mushrooms</label>
+        <label><input type="checkbox" name="onions" value="30"  onclick="return attachCheckboxHandlers()"/> Onions</label>
+        <label><input type="checkbox" name="black_olives" value="40" onClick="return attachCheckboxHandlers()" /> Black olives</label>
+        <label><input type="checkbox" name="sausage" value="50" onClick="return attachCheckboxHandlers()" /> Sausage</label>
+        <label><input type="checkbox" name="pepperoni" value="50" onClick="return attachCheckboxHandlers()" /> Pepperoni</label>
+    </div>
+    
+    <p>
+        <label>Total:  <input type="text" name="total" class="num" size="6" value="0.00" readonly="readonly" /></label>
+    </p>
+    </fieldset>
+	</div>
+    
+</form>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html> 
+<!--
+    Free  Template by Mohamed Sobhy
+    https://www.facebook.com/Mido.HHH
+-->
+<html lang="en">
+<head>
+	<title>King Of Pasta</title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <script src="js/jquery.js"></script> 
+	<script src="js/jquery.glide.js"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/animate.css">
+    <script type="text/javascript" src="js/MyJQ.js"></script>
+    <script src="js/jquery.localScroll.min.js" type="text/javascript"></script>
+	<script src="js/jquery.scrollTo.min.js" type="text/javascript"></script> 
+    <script src="js/wow.min.js" type="text/javascript"></script> 
+
+<!-- scroll function -->
+<script type="text/javascript">
+$(document).ready(function() {
+   $('#navigations').localScroll({duration:800});
+});
+</script>
+
+
+<script src="js/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>
+<script language="javascript">
+function check(){
+	var n1=document.getElementById('email').value;
+	var n2=document.getElementById('name').value;
+	var n3=document.getElementById('message').value;
+	if(n1=="" || n2=="" || n3=="")
+	{
+		alert('Please fill the fields!');
+		return false;
+	}
+	else
+		return true;
+}
+</script>
+<script language="javascript">
+function check()
+{
+	var month=document.getElementById('n7').value;
+	if(month=="Jan" || month=="Feb" || month=="Mar" || month=="Apr" || month=="May" || month=="Jun")
+	{
+		alert("Illegal Selection!");
+		return false;
+	}
+	else 
+		return true;
+}
+</script>
+
+</head>
+<body>\
+<form action=b.jsp method=post onsubmit="return check()">
+
+<!--============ Navigation ============-->
+
+<div class="headerwrapper">
+	<div id="header" class="container">
+		<div class="logo"> <a href="#"><img src="images/LOGO.png" alt="logo" width="165" height="74"></a> </div> <!--end of Logo-->
+        <nav>
+            <ul id="navigations">
+                <li><a href="#navigations">HOME</a></li>
+                <li> <a href="#slider">ABOUT</a></li>
+                <li><a href="branches.html">BRANCHES</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="#contactus">CONTACT</a></li>
+				<li><a href="admin.html">ADMIN</a></li>
+            </ul>
+        </nav>
+      </div> <!--end of header-->
+</div> <!-- end of headerwrapper-->
+
+<center><h1>PICK YOUR DATES</h1></center>
+
+
+    <center><legend>Select Day:</legend></center>
+    
+	<select name=n6>
+	<center><option>select</option>
+	<option value=1>1</option>
+	<option value=2>2</option>
+	<option value=3>3</option>
+	<option value=4>4</option>
+	<option value=5>5</option>
+	<option value=6>6</option>
+	<option value=7>7</option>
+	<option value=8>8</option>
+	<option value=9>9</option>
+	<option value=10>10</option>
+	<option value=11>11</option>
+	<option value=12>12</option>
+	<option value=13>13</option>
+	<option value=14>14</option>
+	<option value=15>15</option>
+	<option value=16>16</option>
+	<option value=17>17</option>
+	<option value=18>18</option>
+	<option value=19>19</option>
+	<option value=20>20</option>
+	<option value=21>21</option>
+	<option value=22>22</option>
+	<option value=23>23</option>
+	<option value=24>24</option>
+	<option value=25>25</option>
+	<option value=26>26</option>
+	<option value=27>27</option>
+	<option value=28>28</option>
+	<option value=29>29</option>
+	<option value=30>30</option>
+	<option value=31>31</option></center>
+
+</select> 
+
+
+
+</body>
+</html>
