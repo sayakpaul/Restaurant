@@ -1,0 +1,23 @@
+/* CSS Document */
+{
+	margin: 0;
+}
+h1{
+	margin-bottom:20px;
+}
+nav{
+	height: 50px;
+	background-color:rgba(0,0,0,.5);
+}
+.sect{
+	height:100%;
+	background-color:aqua;
+
+}
+.subSection
+{
+	height:50%;
+	border-bottom-color:bisque;
+}
+
+
